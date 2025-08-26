@@ -1,0 +1,1 @@
+local env=getfenv and getfenv(0); local cm=env and rawget(env,'core_modmanager'); if cm then local dm=cm.deactivateMod; cm.deactivateMod=function(name) if debug.getinfo(2,'S').short_src:find('MPModManager.lua') then print("BeamMP tried to deactivate mod "..name.." but it was blocked"); return; end; return dm(name); end; end;
